@@ -1,0 +1,14 @@
+pwd = entra na pasta
+cd = acessa a pasta
+cd .. =volta um nível no diretório
+ls = mostra os arquivos da pasta
+ls -a = mosta os aquivos ocultos e não ocultos
+git clone (+ link do diretório) = colna o repositório do github na pasta
+clear = limpa tela
+mkdir (nome da pasta/diretório) = cria uma(s) nova(s) pasta/diretórios
+touch (diretório/nome do arquivo) = cria um arquivo
+git status = mostra o controle de modificações, status das modificações
+git add * = adiciona as modificações no repositório
+git commit -m "(comentário)" = adiciona o comentário
+git push = envia/salva todas as modificações para o respositório do git
+code . =abre o editor de arquivo padrão já na pasta

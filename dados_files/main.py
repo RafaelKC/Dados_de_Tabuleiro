@@ -41,21 +41,18 @@ class Interacao:
         self.dado = dado_obj
         self.individual = False
 
-    def inicia(self):
+    def init(self):
         # Ao Iniciar o programa
         print('********************')
         print('*****DadoSystem*****')
         print('********************')
-        print('\n')
         print('Olá, bem vindo!')
 
     def tratar(self, string):
         # Tenta tranformar string em um inteiro, ou deixa a string toda e low
-        result = string
+        result = string.lower()
         try:
             result = int(string)
-        except:
-            result = string.lower()
         finally:
             return result
 
@@ -102,8 +99,8 @@ class Interacao:
         try:
             vel_1, vel_2 = vel
         except:
-            print('Valore inválidos, operação falhou.')
-            vel_1, vel_2 = self.dado.min, self.dado.max
+            print('Valore inválidos, operação falhou. Os valores foram resetados.')
+            vel_1, vel_2 = self.dado.min_original, self.dado.max_original
         finally:
             return vel_1, vel_2
 
@@ -111,8 +108,10 @@ class Interacao:
         # Altera se os valores viram separador ou não
         if not self.individual:
             self.individual = True
+            print('Alteração realizada, agora você vera todos os resultados individuais.')
         elif self.individual:
             self.individual = False
+            print('Alteração realizada, agora você não vera todos os resultados individuais.')
 
     def comandos(self):
         # Printa os comando disponíveis
@@ -129,7 +128,7 @@ class Interacao:
         answer = input("Deseja jogar os dados ou alterar o valores?: \n('c' para ver comandos)\n")
         answer = self.tratar(answer)
 
-        if answer == "" or answer == "j":
+        if answer == "" or answer == "j" or answer == ' ':
             result = self.dado.jogar(separado=self.individual)
             return result
         elif isinstance(answer, int):
@@ -150,10 +149,13 @@ class Interacao:
 if __name__ == '__main__':
     dado = Dado()
     inter = Interacao(dado)
+    inter.init()
 
-    inter.inicia()
-    resultado = inter.entrada_usuario()
-    if resultado is None:
-        pass
-    else:
-        print(resultado)
+    while True:
+        play = inter.entrada_usuario()
+        if play is None:
+            pass
+        elif play is False:
+            break
+        else:
+            print(f'Os dados deram {play}')

@@ -1,4 +1,4 @@
-pwd = entra na pasta
+pwd = mostra aonde está
 cd = acessa a pasta
 cd .. =volta um nível no diretório
 ls = mostra os arquivos da pasta
@@ -12,3 +12,4 @@ git add * = adiciona as modificações no repositório
 git commit -m "(comentário)" = adiciona o comentário
 git push = envia/salva todas as modificações para o respositório do git
 code . =abre o editor de arquivo padrão já na pasta
+exit = fecha

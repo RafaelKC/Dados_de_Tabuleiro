@@ -1,0 +1,6 @@
+'' ou 'j' para Jogo simples;
+Número x para Jogar x vezes o dado;
+'a' para alterar máximo e mínimo dos valores das faces do dado;
+'i' para alterar se você quer ou não os valores individuais de cada jogada no tabuleiro;
+'e' para sair;
+'c' para ver os comandos.
